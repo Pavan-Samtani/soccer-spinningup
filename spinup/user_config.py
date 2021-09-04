@@ -4,16 +4,11 @@ import os.path as osp
 # Default neural network backend for each algo
 # (Must be either 'tf1' or 'pytorch')
 DEFAULT_BACKEND = {
-    'vpg': 'pytorch',
-    'trpo': 'tf1',
-    'ppo': 'pytorch',
-    'ddpg': 'pytorch',
-    'td3': 'pytorch',
-    'sac': 'pytorch'
+    'td3': 'tf1',
 }
 
 # Where experiment outputs are saved by default:
-DEFAULT_DATA_DIR = osp.join(osp.abspath(osp.dirname(osp.dirname(__file__))),'data')
+DEFAULT_DATA_DIR = os.path.join(osp.abspath(osp.dirname(osp.dirname(__file__))), os.pardir, 'models')
 
 # Whether to automatically insert a date and time stamp into the names of
 # save directories:

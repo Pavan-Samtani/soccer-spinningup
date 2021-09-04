@@ -91,7 +91,7 @@ def get_datasets(logdir, condition=None):
             except:
                 print('Could not read from %s'%os.path.join(root,'progress.txt'))
                 continue
-            performance = 'AverageTestEpRet' if 'AverageTestEpRet' in exp_data else 'AverageEpRet'
+            performance = 'AverageTestEpRet_P1' if 'AverageTestEpRet_P1' in exp_data else 'AverageEpRet_P1'
             exp_data.insert(len(exp_data.columns),'Unit',unit)
             exp_data.insert(len(exp_data.columns),'Condition1',condition1)
             exp_data.insert(len(exp_data.columns),'Condition2',condition2)
@@ -160,13 +160,14 @@ def make_plots(all_logdirs, legend=None, xaxis=None, values=None, count=False,
     for value in values:
         plt.figure()
         plot_data(data, xaxis=xaxis, value=value, condition=condition, smooth=smooth, estimator=estimator)
-    plt.show()
+    print(os.path.join(all_logdirs[0], "progress.png"))
+    plt.savefig(os.path.join(all_logdirs[0], "progress.png"), dpi=300)
 
 
 def main():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('logdir', nargs='*')
+    parser.add_argument('--logdir', nargs='*')
     parser.add_argument('--legend', '-l', nargs='*')
     parser.add_argument('--xaxis', '-x', default='TotalEnvInteracts')
     parser.add_argument('--value', '-y', default='Performance', nargs='*')

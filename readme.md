@@ -1,9 +1,14 @@
 **Status:** Maintenance (expect bug fixes and minor updates)
 
-Welcome to Spinning Up in Deep RL! 
-==================================
+Multi-Agent TD3 + Experience Sharing for cooperative soccer
+========================================================================
 
-This is an educational resource produced by OpenAI that makes it easier to learn about deep reinforcement learning (deep RL).
+This repository contains our version of the basic Multi-Agent extension of TD3 + Experience Sharing, used in "Learning to Play Soccer From Scratch: Sample-Efficient Emergent Coordination Through Curriculum-Learning and Competition". The code allows simple training of policies of any the defined stages (1v0, 1v1, and 2v2) in Deepmind's MuJoCo-based simulated soccer environment, for which we developed a simplified wrapper, that includes the transformed observations and rewards used in our work (Link to wrapper: https://github.com/Pavan-Samtani/dm_soccer2gym).
+
+This work was derived from an educational resource produced by OpenAI that makes it easier to learn about deep reinforcement learning (deep RL).
+
+If you wish to know more about the original Spinning Up Project by OpenAI
+-------------------------------------------------------------------------
 
 For the unfamiliar: [reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning) (RL) is a machine learning approach for teaching agents how to solve tasks by trial and error. Deep RL refers to the combination of RL with [deep learning](http://ufldl.stanford.edu/tutorial/).
 
@@ -18,10 +23,20 @@ This module contains a variety of helpful resources, including:
 Get started at [spinningup.openai.com](https://spinningup.openai.com)!
 
 
-Citing Spinning Up
-------------------
+Citing Multi-Agent TD3 + ES
+---------------------------
 
-If you reference or use Spinning Up in your research, please cite:
+If you reference or use these versions of Multi-Agent TD3 for DeepMinds MuJoCo soccer environment in your research, please cite:
+
+```
+@inproceedings{samtani2021learning,
+  title={Learning to Play Soccer from Scratch: Sample-Efficient Emergent Coordination
+    through Curriculum-Learning and Competition},
+  author={Samtani, Pavan and Leiva, Francisco and Ruiz-del-Solar, Javier},
+  booktitle={2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2021}
+}
+```
 
 ```
 @article{SpinningUp2018,
